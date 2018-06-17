@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Class 2</title>
+        <script>
+            function Ninja(name){
+                this.name = name;
+                this.health = 100;
+                var speed = 3;
+                var strength = 3;
+
+                Ninja.prototype.sayName = function(){
+                    console.log(`Name is ${this.name}`);
+                    return this;
+                }
+
+                Ninja.prototype.showStats = function(){
+                    console.log(`Name is ${this.name}, strength is ${strength}, health is ${this.health}, speed is ${speed}`);              
+                    return this;
+                }
+
+                Ninja.prototype.drinkSake = function(){
+                    this.health += 10;
+                    return this;
+                }
+
+                Ninja.prototype.punch = function(ninja) {
+                    if (ninja instanceof Ninja){
+                        ninja.health -= 5;                        
+                    }
+                    return this;
+                }
+
+                Ninja.prototype.kick = function(ninja){
+                    if (ninja instanceof Ninja){
+                        ninja.health -= strength * 15;
+                        return this;
+                    }
+                }
+            }
+
+            var ninja1 = new Ninja('test');
+            var ninja2 = new Ninja('test2');
+            ninja1.showStats();
+            ninja1.drinkSake();
+            ninja1.showStats();
+
+            ninja2.punch(ninja1);
+            ninja1.showStats();
+            ninja2.kick(ninja1);
+            ninja1.showStats();
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
