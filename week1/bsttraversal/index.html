@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>BST Traversal</title>
+        <script>
+            function BST(){
+                this.root = null;
+                
+                BST.prototype.insert = function(val){
+                    var node = new Node(val);
+                    if (!this.root){
+                        this.root = node;                        
+                    } else {
+                        this.root.insert(node);
+                    }
+                    return this;
+                }
+            }
+
+            function Node(val){
+                this.val = val;
+                this.left = null;
+                this.right = null;
+
+                Node.prototype.insert = function(node){
+                    if (node instanceof Node){
+                        if(node.val > this.val){
+                            if(!this.right){
+                                this.right = node;
+                            } else {
+                                this.right.insert(node);
+                            }
+                        } else if (node.val < this.val){
+                            if(!this.left){
+                                this.left = node;
+                            } else {
+                                this.left.insert(node);
+                            }
+                        }
+                    }
+                }
+            }
+
+            BST.prototype.preorder = function(node){
+                if(!node){
+                    node = this.root;
+                }
+                console.log(node.val);
+
+                if(node.left){
+                    this.preorder(node.left);
+                }
+
+                if(node.right){
+                    this.preorder(node.right);
+                }
+            };
+
+            BST.prototype.postorder = function(node){
+                if (!node){
+                    node = this.root;
+                }
+                
+                if(node.left){
+                    this.postorder(node.left);
+                }
+
+                if(node.right){
+                    this.postorder(node.right);
+                }
+                
+                console.log(node.val);
+            };
+
+            BST.prototype.inorder = function(node){
+                if(!node){
+                    node = this.root;
+                }
+
+                if(node.left){
+                    this.inorder(node.left);
+                }
+
+                console.log(node.val);
+
+                if(node.right){
+                    this.inorder(node.right);   
+                }
+            };
+
+            var bst = new BST().insert(40).insert(20).insert(50).insert(25);
+
+            bst.preorder();
+            bst.postorder();
+            bst.inorder();
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
