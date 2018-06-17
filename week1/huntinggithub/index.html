@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hunting GitHub</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                console.log('doc is ready');
+                var promise = $.get('https://api.github.com/users/dannywaldman');
+
+                $('#find').click(function(){
+                    promise.then(displayName);
+                    });
+
+                function displayName(data){
+                    let html = `<h1>${data.login}</h1>`;
+                    html += `<p>${data.url}</p>`;
+                    html += `<p>${data.id}</p>`;
+
+                    $('#results').html(html);
+                }
+                });
+        </script>
+    </head>
+    <body>
+        <button id="find" type="button">Hunt GitHub</button>
+        <div id="results"></div>
+    </body>
+</html>
