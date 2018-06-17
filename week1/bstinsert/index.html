@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>BST Insert</title>
+        <script>
+            function BST(){
+                this.root = null;
+                
+                BST.prototype.insert = function(val){
+                    var node = new Node(val);
+                    if (!this.root){
+                        console.log(`Adding first node as root with value ${val}`);
+                        this.root = node;                        
+                    } else {
+                        console.log(`Root exists, traversing the tree to insert ${val}`);
+                        this.root.insert(node);
+                    }
+                    return this;
+                }
+            }
+
+            function Node(val){
+                this.val = val;
+                this.left = null;
+                this.right = null;
+
+                Node.prototype.insert = function(node){
+                    if (node instanceof Node){
+                        if(node.val > this.val){
+                            if(!this.right){
+                                console.log(`Added ${node.val} to the right of ${this.val}`);
+                                this.right = node;
+                            } else {
+                                console.log(`${this.val} has a right node, recursivley adding to the next node tree.`);
+                                this.right.insert(node);
+                            }
+                        } else if (node.val < this.val){
+                            if(!this.left){
+                                console.log(`Adding ${node.val} to the left of ${this.val}.`);  
+                                this.left = node;
+                            } else {
+                                console.log(`${this.val} has a left node, recursivley adding to the next node tree.`);
+                                this.left.insert(node);
+                            }
+                        }
+                    }
+                }
+            }
+            var bst = new BST().insert(5).insert(6).insert(7);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
