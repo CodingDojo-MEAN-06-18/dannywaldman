@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Min Head</title>
+        <script>
+            function insertIntoHeap(heap, val){
+                heap[0] = undefined;
+                c = heap.length;
+                heap.push(val);
+                p = Math.trunc(c / 2);
+
+                while ( c != 1){
+                    if ( heap[p] > heap[c]){
+                        heap[c] = heap[p];
+                        c = p;
+                        heap[p] = val;
+                        p = Math.trunc( c / 2);
+                    } else {
+                        break;
+                    }
+                }
+
+                console.log(heap);
+            }
+            
+            // sample outputs:
+            insertIntoHeap([], 13);  // alters the empty array to be [undefined, 13]
+            insertIntoHeap([undefined, 3, 8, 10, 11, 9, 20, 14], 7); // alters the array to [undefined, 3, 7, 10, 8, 9, 20, 14, 11]            
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
