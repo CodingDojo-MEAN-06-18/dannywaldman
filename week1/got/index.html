@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game of Thrones</title>
+    <meta name="description" content="An example of using an the Game of Thrones API.">
+    <link rel="stylesheet" type="text/css" media="screen" href="style/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('img').click(function(){
+                var id = $(this).attr("id");
+                $.get(`https://anapioficeandfire.com/api/houses/${id}`, function(data){
+                   var htmlStr = `<fieldset><legend>House Details</legend><h2>Name: ${data.name}</h2>`;
+                    htmlStr += `<h2>Words: ${data.words}</h2>`;
+                    htmlStr += `<h2>Titles: ${data.titles.join()}</h2></fieldset>`;
+                    $('#results').html(htmlStr);
+                },'json');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="content">
+        <img src="img/baratheon.png" alt="baratheon" id="17" />
+        <img src="img/lannister.jpg" alt="lannister" id="229"/>
+        <img src="img/stark.jpg" alt="stark" id="362"/>
+        <img src="img/targaryen.jpg" alt="targaryen" id="378"/>
+    </div>
+    <div class="content" id="results">
+    </div>
+</body>
+</html>
