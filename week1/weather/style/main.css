@@ -1,0 +1,8 @@
+@import url('reset.css');
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 10px 0;
+}
