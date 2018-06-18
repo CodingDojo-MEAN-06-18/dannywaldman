@@ -4,10 +4,26 @@
         <meta charset="utf-8">
         <title>Dojo Query</title>
         <script>
-        
+            function $Dojo(id) {
+                this.myId = document.getElementById(id);
+                this.click = function (callback) {
+                    this.myId.addEventListener("click", callback);
+                };
+
+                this.hover = function (hoverin, hoverout) {
+                    this.myId.addEventListener("mouseover", hoverin);
+                    this.myId.addEventListener("mouseout", hoverout);
+                };
+
+                return this;
+            }        
+
+            $Dojo('btn').click(function(){
+             alert('button was clicked');   
+            });
         </script>
     </head>
     <body>
-
+        <button id="btn" type="button">Click me</buttom>
     </body>
 </html>
