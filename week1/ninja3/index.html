@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Class 3</title>
+        <script>
+            class Ninja {
+                constructor(name, speed = 3, strength = 3, health = 100){
+                    this.name = name;
+                    this.speed = speed;
+                    this.strength = strength;
+                    this.health = health;
+                }
+
+                sayName(){
+                    console.log(this.name);
+                }
+
+                showStats(){
+                    console.log(`Name is ${this.name}, strength is ${this.strength}, speed is ${this.speed}, health is ${this.health}`);
+                }
+
+                drinkSake(){
+                    this.health += 10;
+                }
+            }
+
+            class Sensei extends Ninja {
+                constructor(name, speed = 10, strength = 10, health = 200){
+                    super(name, speed, strength, health);
+                }
+
+                wisdom(){
+                    console.log('Wisdom stuff here');
+                }
+            }
+
+            var ninja = new Ninja('test1');
+            ninja.showStats();
+            ninja.drinkSake();
+            ninja.showStats();
+
+            var sensei = new Sensei("splinter");
+            sensei.showStats();
+            sensei.wisdom();
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
