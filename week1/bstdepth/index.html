@@ -6,17 +6,17 @@
         <script>
             function BST(){
                 this.root = null;
+            }    
                 
-                BST.prototype.insert = function(val){
-                    var node = new Node(val);
-                    if (!this.root){
-                        this.root = node;                        
-                    } else {
-                        this.root.insert(node);
-                    }
-                    return this;
+            BST.prototype.insert = function(val){
+                var node = new Node(val);
+                if (!this.root){
+                    this.root = node;                        
+                } else {
+                    this.root.insert(node);
                 }
-            }
+                return this;
+            }            
 
             function Node(val){
                 this.val = val;
