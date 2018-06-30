@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Cats</title>
+    </head>
+    <body>
+        <% for (var image in images) { %>
+            <img alt="<%= images[image].name  %>" src="<%= images[image].path %>">
+            <hr>
+        <% } %>
+    </body>
+</html>
