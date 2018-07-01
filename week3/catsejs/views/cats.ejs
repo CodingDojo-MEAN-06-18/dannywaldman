@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Cats</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row head">
+                <div class="col text-center">
+                    <h1>EJS Cats</h1>                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <% for ( var cat in cats ) { %>
+                        <a href="/cats/<%= cat %>">
+                            <img class="img-circle center-block" src="<%= cats[cat].path %>">
+                        </a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

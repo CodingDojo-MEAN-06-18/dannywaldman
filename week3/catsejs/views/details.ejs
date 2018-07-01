@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title><%= cat %></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row head">
+                <div class="col text-center">
+                    <h1>Details for <%= cat %></h1>                    
+                </div>
+            </div>
+            <div class="row">
+                <img class="img-circle center-block" src="<%= details.path  %>">
+            </div>
+            <div class="row food details">
+                <div class="col">
+                    <h3>Favorite food: <%= details.food %></h3>
+                </div>
+            </div>
+            <div class="row age details">
+                <div class="col">
+                    <h3>Age: <%= details.age %></h3>
+                </div>
+            </div>
+            <div class="row spots details">
+                <div class="col">
+                    <h3>Sleeping spots:<h3>
+                        <ul>
+                            <% for ( var i = 0; i < details.spots.length; i++) { %>
+                                <li><%= details.spots[i] %></li>
+                            <% } %>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
