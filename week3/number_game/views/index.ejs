@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Great Number Game</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+    <p>Take a guess!</p>
+    <% if (answer.includes('bad')) { %>
+    <div class="bad">
+      <% if (answer.includes('low')) { %>
+      <p>Too Low!</p>
+      <% } else { %>
+      <p>Too High!</p>
+      <% } %>
+    </div>
+    <% } else if (answer == 'good') { %>
+    <div class="good">
+      <p><%= number %> was the number!</p>
+      <form method="post" action="/process">
+        <input type="hidden" name="action" value="reset">
+        <input type="submit" value="Play again!">
+      </form>
+    </div>
+    <% } %>
+    <% if ( answer.includes('bad') || answer == 'start') { %>
+    <form method="post" action="/process">
+      <input type="hidden" name="action" value="try">
+      <input type="text" name="guess">
+      <input type="submit" value="Submit">
+    </form>
+    <% } %>
+  </body>
+</html>
