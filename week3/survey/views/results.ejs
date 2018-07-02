@@ -1,0 +1,38 @@
+<html>
+    <head>
+       <title>Dojo Survey Index</title>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container border border-dark mt-5">
+            <div class="row p-3">
+                <h2><u>Submitted Information</u></h2>
+            </div>
+            <div class="row p-3">
+                <div class="col">
+                    <p>Name:  <%= details.name %></p>
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="col">
+                    <p>Dojo Location:  <%= details.location %></p>
+                </div>
+            </div>
+            <div class="row p-3">            
+                <div class="col">                
+                    <p>Favorite Language: <%= details.language %></p>
+                </div>
+            </div>
+            <div class="row p-3">            
+                <div class="col">                
+                    <p>Comment: <%= details.comments %></p>
+                </div>
+            </div>
+            <div class="row p-3">            
+                <div class="col">                
+                    <a href="/" class="btn btn-primary">Go Back</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
