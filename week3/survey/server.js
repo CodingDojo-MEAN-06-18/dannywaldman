@@ -10,8 +10,6 @@ app.use(express.static(path.join(__dirname, './static')));
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 
-app.post('/results', (request, response) => {
-    response.render('results', {'details' : {name : request.body.name, location : request.body.location, language : request.body.language, comments : request.body.comments}});            
-});
+require('./routes/index.js')(app);
 
 app.listen(8000, () => console.log('listening on port 8000'));
