@@ -10,4 +10,4 @@ app.use(express.static(path.join(__dirname, './static')));
 
 require('./routes/index.js')(app);
 
-app.listen(8000, () => console.log('listening on port 8000'));
+app.listen(8001, () => console.log('listening on port 8001'));

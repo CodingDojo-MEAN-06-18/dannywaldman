@@ -12,7 +12,6 @@ module.exports = function Route(app){
         });
     
     app.get('/fetch/:type/:page', function(request, response){
-        console.log(`https://swapi.co/api/${request.params.type}/?page=${request.params.page}`);
         axios.get(`https://swapi.co/api/${request.params.type}/?page=${request.params.page}`)
             .then(data => {
                 return response.json(data.data);

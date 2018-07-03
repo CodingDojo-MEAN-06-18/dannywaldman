@@ -8,6 +8,7 @@
         $('#previous button').hide();
         $('button.get').click(function(){
             const type = $(this).attr('ref');
+            $(`#all button`).attr('ref', type);
             $.get(`/fetch${type}`, function(data){
                 let next = data.next ? data.next.match(/\d+$/)[0] : 0;
                 let previous = data.previous ? data.previous.match(/\d+$/)[0] : 0;
@@ -30,6 +31,26 @@
                 set(previous, 'previous', type);
                 setResults(data.results);
             }, 'json');
+        });
+
+        $('button.all').click(function(){
+            const type = $(this).attr('ref');
+            $('#all button').hide();
+            $('#next button').hide();
+            $('#previous button').hide();
+            $.get(`/fetch${type}`, function(data){
+               console.log(data.results);
+               let results = data.results;
+               setResults(results);
+               let next = data.next ? data.next.match(/\d+$/)[0] : 0;
+            }, 'json');
+                
+            while (next > 0){
+                $.get(`/fetch${type}/${next}`, function(page){
+                    console.log(page);                        
+                    next = page.results.next ? page.results.next.match(/\d+$/)[0] : 0;
+                }, 'json');
+            }
         });
 
         const setResults = (data) => {
@@ -87,7 +108,7 @@
                 <button ref="/previous" class="btn btn-dark btn-sm text-white page" page="0" >Previous 10</button>
             </div>
             <div class="col text-center" id="all">            
-                <button ref="/all" class="btn btn-dark btn-sm text-white"></button>
+                <button class="btn btn-dark btn-sm text-whitei all"></button>
             </div>
             <div class="col text-right" id="next">            
                 <button ref="/next" class="btn btn-dark btn-sm text-white page" page="0">Next 10</button>
