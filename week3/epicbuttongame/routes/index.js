@@ -6,16 +6,16 @@ module.exports = function Route(app, server){
         response.render('index');
         });
 
-    io.sockets.on('connection', socket => {
+    io.on('connection', socket => {
         socket.emit('number_changed', count);
     
         socket.on('incriment', data => {
-            io.sockets.emit('number_changed', ++count);
+            io.emit('number_changed', ++count);
             });    
         
         socket.on('reset', data => {
             count = 0;
-            io.sockets.emit('number_changed', count);
+            io.emit('number_changed', count);
             });    
         });
 }
