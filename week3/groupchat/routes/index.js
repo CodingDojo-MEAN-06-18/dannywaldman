@@ -7,7 +7,7 @@ module.exports = (app, server) => {
         socket.emit('chat_history_init', messages);
 
         socket.on('page_load', data => {
-            if (!users.includes(data.user)) {
+            if (!users.includes(data.name)) {
                 io.emit('new_user', `User ${data.name} has joined.`);
                 users.push(data.name);
             }
