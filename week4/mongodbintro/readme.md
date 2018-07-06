@@ -1,8 +1,8 @@
 ## 1. Create a database called 'my_first_db'.
 
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
+```zsh
+> use my_first_db
+switched to db my_first_db
 ```
 ## 2. Create students collection.
 
