@@ -1,5 +1,9 @@
 ## 1. Create a database called 'my_first_db'.
 
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
 ## 2. Create students collection.
 
 ## 3. Create 5 students with the appropriate info.
@@ -9,12 +13,9 @@
 ## 5. Retrieve all students who are from California (San Jose Dojo) or Washington (Seattle Dojo).
 
 ## 6. Get ll students whose lucky number is:
-
-## greater than 3
-
-## less than or equal to 10
-
-## between 1 and 9 (inclusive)
+##    greater than 3
+##    less than or equal to 10
+##    between 1 and 9 (inclusive)
 
 ## 7. Add a field to each student collection called 'interests' that is an ARRAY.  It should contain the following entries: 'coding', 'brunch', 'MongoDB'. Do this in ONE operation.
 
