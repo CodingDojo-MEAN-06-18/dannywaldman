@@ -100,15 +100,14 @@ WriteResult({ "nInserted" : 1 })
 
 ## 6. Get all students whose lucky number is:
 
-##    greater than 3
+###    greater than 3
 ```zsh
 > db.students.find({"lucky_number" : {$gt:3}})
 { "_id" : ObjectId("5b3eb772d6c3696f6daa4363"), "name" : "four", "home_state" : "texas", "lucky_number" : 4, "birthday" : { "month" : 4, "day" : 4, "year" : 1974 } }
 { "_id" : ObjectId("5b3eb78cd6c3696f6daa4364"), "name" : "five", "home_state" : "texas", "lucky_number" : 5, "birthday" : { "month" : 5, "day" : 5, "year" : 1975 } }
-
 ```
 
-##    less than or equal to 10
+###    less than or equal to 10
 ```zsh
 > db.students.find({"lucky_number" : {$lte:10}})
 { "_id" : ObjectId("5b3eb72cd6c3696f6daa4360"), "name" : "one", "home_state" : "texas", "lucky_number" : 1, "birthday" : { "month" : 1, "day" : 1, "year" : 1971 } }
@@ -118,7 +117,7 @@ WriteResult({ "nInserted" : 1 })
 { "_id" : ObjectId("5b3eb78cd6c3696f6daa4364"), "name" : "five", "home_state" : "texas", "lucky_number" : 5, "birthday" : { "month" : 5, "day" : 5, "year" : 1975 } }
 ```
 
-##    between 1 and 9 (inclusive)
+###    between 1 and 9 (inclusive)
 ```zsh
 > db.students.find({$and:[{"lucky_number":{$gte:1}},{"lucky_number":{$lte:9}}]})
 { "_id" : ObjectId("5b3eb72cd6c3696f6daa4360"), "name" : "one", "home_state" : "texas", "lucky_number" : 1, "birthday" : { "month" : 1, "day" : 1, "year" : 1971 } }
@@ -152,7 +151,7 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 
 ## 9. Add the interest 'taxes' into someone's interest array.
 
-``zsh
+```zsh
 > db.students.update({name:"five"},{$push:{interests:"taxes"}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 ```
