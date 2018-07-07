@@ -1,0 +1,25 @@
+<% layout( 'base' ) -%>
+
+<div class="row">
+    <div class="col"></div>
+    <div class="col-8">
+        <h1 class="text-center"><%= title %></h1>
+            <table class="table table-hover">
+                <tr>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td><%= wolf.name %></td>
+                    <td><%= wolf.color %></td>
+                    <td>
+                        <a href="/wolves/edit/<%= wolf._id %>" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/wolves/destroy/<%= wolf._id %>" class="btn btn-danger btn-sm">Delete</a>
+                        <a class="btn btn-success btn-sm" href="/">Home</a>
+                    </td>
+                </tr>
+            </table>
+    </div>
+    <div class="col"></div>
+</div>
