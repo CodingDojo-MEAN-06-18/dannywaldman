@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Create a User : Demo</title>
+    </head>
+    <body>
+        <h1>New User</h1>
+        <form action='/users' method='post'>
+            Name: <input name='name' type='text'>
+            Age: <input name='age' type='text'>
+            <input type='submit' value="Add">
+        </form>
+        <% if (users.length > 0) { %>
+        <hr>
+        <h2>Current Users</h2>
+            <% users.forEach((user)=>{ %>
+            <p>Name: <%= user.name %>, Age: <%= user.age %><p>
+            <% }) %>
+        <% } %>
+    </body>
+</html>
