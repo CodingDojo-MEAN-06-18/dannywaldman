@@ -1,0 +1,27 @@
+<% layout( 'base' ) -%>
+
+<div class="row">
+    <div class="col"></div>
+    <div class="col-8">
+        <h1><%= title %></h1>
+        <% if (messages.required){ %>
+            <ul class="list-group">
+            <% for(let err of messages.required){ %>
+            <li class="list-group-item list-group-item-danger"><%= err %></li>
+            <% } %>
+            </ul>
+        <% } %>        
+        <form action="/quotes" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" name="name">
+            </div>
+            <div class="form-group">
+                <label for="quote">Quote:</label>
+                <input type="text" class="form-control" name="quote">
+            </div>
+            <input type="submit" class="btn btn-primary btn-lg" value="Add Quote">
+            <a class="btn btn-primary btn-lg float-right" href="/quotes">Get Quotes</a>
+    </div>
+    <div class="col"></div>
+</div>
