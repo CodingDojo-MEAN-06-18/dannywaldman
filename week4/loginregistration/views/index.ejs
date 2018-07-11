@@ -1,0 +1,47 @@
+ <% layout( 'base' ) -%>     
+<div class="row">
+    <div class="col">
+        <form action="/register" method="post">
+            <fieldset class="border border-dark p-4 mt-5">            
+                <legend>Register</legend> 
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="text" class="form-control" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="first_name">First Name:</label>
+                        <input type="text" class="form-control" name="first_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" class="form-control" name="last_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">First Name:</label>
+                        <input type="date" class="form-control" name="dob">
+                    </div>
+                    <button type="submit" class="btn btn-success float-right">Register</button>
+            </form>
+        </fieldset>
+    </div>
+    <div class="col">
+        <form method="post" action="/login">
+            <fieldset class="border border-dark p-4 mt-5">
+                <legend>Login</legend>
+                    <div class="form-group">
+                        <label for="email">Username:</label>
+                        <input type="text" name="username" class="form-control">
+                    </div>          
+                    <div class="form-group">
+                        <label for="pw">Password:</label>
+                        <input type="password" name="pw" class="form-control">
+                    </div>      
+                    <button type="submit" class="btn btn-success float-right">Login</button>
+                </fieldset>                        
+        </form>
+    </div>
+</div>     
