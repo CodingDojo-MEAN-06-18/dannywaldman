@@ -22,5 +22,6 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './client/views'));
 
 require('./server/config/routes.js')(app)
+require('./server/config/mongoose.js');
 
 app.listen(8000, () => console.log('listening on port 8000'))
