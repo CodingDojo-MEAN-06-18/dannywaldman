@@ -22,9 +22,7 @@ myObj = { x: 5, y: 10 };
 
 class MyNode {
     _priv: number;
-    constructor(val: number) {
-        this._priv = val;
-    }
+    constructor(public val: number) {}
     doSomething(): void {
         this._priv = 10;
      }
