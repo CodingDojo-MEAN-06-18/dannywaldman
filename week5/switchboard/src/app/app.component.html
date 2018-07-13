@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col"></div>
+    <div class="col-8">
+      <h1 class="text-center">{{ title }}</h1>
+      <div class="buttons">
+        <span *ngFor="let button of buttons; let i = index;">
+          <button (click)="toggle(i)" *ngIf="button.state == true" [ngClass]="{'btn btn-success' : button.state == true}">On</button>
+          <button (click)="toggle(i)" *ngIf="button.state == false" [ngClass]="{'btn btn-danger' : button.state == false}">Off</button>
+        </span>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
