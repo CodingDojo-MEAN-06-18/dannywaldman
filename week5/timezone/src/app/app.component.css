@@ -1,0 +1,21 @@
+.container {
+  margin: 0 auto;
+  width: 800px;
+}
+
+button {
+  margin: 20px;
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+.buttons {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.yellow {
+  background-color: yellow;
+}

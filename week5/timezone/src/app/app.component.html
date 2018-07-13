@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  <div class="buttons">
+    <button (click) = "setZone('PDT')" [ngClass] = "{yellow : zone === 'PDT'}">PDT</button>
+    <button (click) = "setZone('MDT')" [ngClass] = "{yellow : zone === 'MDT'}">MDT</button>
+    <button (click) = "setZone('CDT')" [ngClass] = "{yellow : zone === 'CDT'}">CDT</button>
+    <button (click) = "setZone('EDT')" [ngClass] = "{yellow : zone === 'EDT'}">EDT</button>
+    <button (click) = "clear()">Clear</button>
+  </div>
+  <h1>{{ dt | date:"medium":zone }}</h1>
+</div>
