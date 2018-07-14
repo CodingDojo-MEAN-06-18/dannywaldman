@@ -1,0 +1,9 @@
+legend {
+  width: inherit;
+  padding:0 10px;
+  border-bottom:none;
+}
+
+input[type='submit'] {
+  height: 50px;
+}
