@@ -6,13 +6,29 @@
         <form class="form-inline">
           <div class="form-group">
             <label for="power" class="mr-1">Initial Power Level:</label>
-            <input type="number" value="100" name="power" min="1" max="100" class="form-control" (input)="onChange()">
-            <input type="submit" value="submit">
+            <input type="number" value="100" name="power" min="1" max="100" class="form-control" [(ngModel)]="level">
           </div>
         </form>
         <div class="row">
           <div class="col">
-            <app-player [level] = 'level'></app-player>
+            <app-player [level]='level' [type]="'Human'"></app-player>
+          </div>
+          <div class="col">
+            <app-player [level]='level' [type]="'Sayian'"></app-player>
+          </div>
+          <div class="col">
+            <app-player [level]='level' [type]="'Super Sayian'"></app-player>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <app-player [level]='level' [type]="'Super Sayian Two'"></app-player>
+          </div>
+          <div class="col">
+            <app-player [level]='level' [type]="'Super Sayian Three'"></app-player>
+          </div>
+          <div class="col">
+            <app-player [level]='level' [type]="'Super Sayian Four'"></app-player>
           </div>
         </div>
       </fieldset>

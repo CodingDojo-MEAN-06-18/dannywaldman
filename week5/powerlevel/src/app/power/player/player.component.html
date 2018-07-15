@@ -1,3 +1,7 @@
-<p>
-  player works!
-</p>
+<fieldset>
+  <legend>{{ type }}</legend>
+  <p>Power level: {{level}}</p>
+  <h1 *ngIf="level >= 50000">The One</h1>
+  <h1 *ngIf="level > 20000 && level < 50000">Superlative!</h1>
+  <h1 *ngIf="level > 9000 && level < 20000">Over 9000!</h1>
+</fieldset>
