@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col">
+      <fieldset class="border border-dark p-3">
+        <legend>Account Information</legend>
+        <form (submit)='onSubmit($event, myForm)' #myForm="ngForm">
+          <div class="row">
+            <div class="col-7 pl-5">
+              <div class="form-group">
+                <div class="row ml-5 pl-5">
+                  <label for="first" class="col-3 col-form-label">Quote :</label>
+                  <div class="col-9">
+                    <textarea class="form-control" name="quote" [(ngModel)]="current_quote.quote" #quote="ngModel" required minlength="4"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-5 text-danger col-form-label" *ngIf="!quote.valid && quote.dirty">Must be at lesage 4 characters</div>
+          </div>
+          <div class="row">
+            <div class="col-7 pl-5">
+              <div class="form-group">
+                <div class="row ml-5 pl-5">
+                  <label for="last" class="col-3 col-form-label">Author :</label>
+                  <div class="col-9">
+                    <input type="text" class="form-control" name="author" [(ngModel)]="current_quote.author" #author="ngModel" required minlength="1">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-5 text-danger col-form-label" *ngIf="!author.valid && author.dirty">Must be at least 1 character</div>
+          </div>
+          <input type="submit" value="Add Quote" class="btn btn-primary btn-block mt-2" [disabled]='!myForm.valid'>
+        </form>
+      </fieldset>
+    </div>
+  </div>
+  <h1 *ngIf="quotes.length > 0" class="mt-3">Quotes List</h1>
+  <div *ngFor="let quote of quotes" class="row">
+    <div class="col">
+      <app-quote [quote] = 'quote' (rankEvent)="sort($event)" (removeEvent)="remove(quote)"></app-quote>
+    </div>
+  </div>
+</div>
