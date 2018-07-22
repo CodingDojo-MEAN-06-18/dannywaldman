@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col">
+      <h1>Gold Count: {{ gold }}</h1>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <app-mine [type]="'Farm'" [low]="2" [high]="5"></app-mine>
+    </div>
+    <div class="col">
+        <app-mine [type]="'Cave'" [low]="5" [high]="10"></app-mine>
+    </div>
+    <div class="col">
+        <app-mine [type]="'Casino'" [low]="-100" [high]="100"></app-mine>
+    </div>
+    <div class="col">
+        <app-mine [type]="'House'" [low]="7" [high]="15"></app-mine>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <app-summary></app-summary>
+    </div>
+  </div>
+</div>

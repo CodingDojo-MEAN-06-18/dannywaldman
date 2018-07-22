@@ -1,0 +1,5 @@
+<fieldset class="text-center">
+  <legend>{{ type }}</legend>
+  <p>Earn<span *ngIf="low < 0">/loose</span> between {{ low < 0 ? 0 : low }} and {{ high }}</p>
+  <button (click)="dig()">Dig!</button>
+</fieldset>
