@@ -1,0 +1,28 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <h1>Github Score</h1>
+      <form (submit) = "onSubmit($event, username.value)" #form="ngForm">
+        <div class="form-group">
+          <label for="user" class="form-label">Username</label>
+          <input type="text" class="form-control" name="user" [ngModel]="user.login" #username="ngModel" required>
+        </div>
+
+        <button [disabled]="form.invalid" class="btn btn-dark">Calculate my Github Score</button>
+      </form>
+    </div>
+    <div class="col align-self-center">
+      <div *ngIf="user.id > 0">
+        <h1>Your Score : {{ score }}</h1>
+        <h4 class ='text-danger' *ngIf="score < 20">Needs Work!</h4>
+        <h4 class ='text-warning' *ngIf="score >= 20 && score < 50">A decent start!</h4>
+        <h4 class ='text-secondary' *ngIf="score >= 50 && score < 100">Doing good!</h4>
+        <h4 class ='text-success' *ngIf="score >= 100 && score < 200">Great job!</h4>
+        <h4 class ='text-primary' *ngIf="score >= 200">Github Elite!</h4>
+      </div>
+      <div *ngIf="user.id < 1">
+        <h1>{{ user.login }} does not exist. Pick another user</h1>
+      </div>
+    </div>
+  </div>
+</div>
