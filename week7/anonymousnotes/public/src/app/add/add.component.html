@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col">
+    <form (submit)="onSubmit($event,form)" #form="ngForm">
+      <div class="form-group">
+        <label for="note">Note:</label>
+        <input type="text" [(ngModel)]="n.note" #note="ngModel" name="note" required minlength=3 class="form-control">
+        <div class="alert alert-danger" *ngIf="!note.valid  && note.dirty">Note is Required & must be at least 3 characters.</div>
+      </div>
+      <button [disabled]="form.invalid" type="submit" class="btn btn-primary btn-block">Add Note</button>
+    </form>
+  </div>
+</div>
