@@ -1,0 +1,4 @@
+.inline-headers h2{
+  display: inline-block;
+  vertical-align: baseline;
+}

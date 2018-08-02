@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col">
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <a [routerLink]="['../../games', '1']">Game 1</a> |
+      </li>
+      <li class="list-inline-item">
+        <a [routerLink]="['../../games', '2']">Game 2</a> |
+      </li>
+      <li class="list-inline-item">
+        <a [routerLink]="['../../games', '3']">Game 3</a>
+      </li>
+    </ul>
+    <h3 *ngIf="players.length <= 0">No players yes, please add one.</h3>
+    <table class="table table-striped table-bordered mt-3" *ngIf="players.length > 0">
+      <thead class="thead-light">
+        <tr>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of players">
+          <td>{{ player.name }}</td>
+          <td>
+            <div class="btn-group  btn-group-lg">
+              <button (click)='onClick(player, "p")' class="btn" [ngClass]="{'btn-success': player.games[game].status === 'p'}">Playing</button>
+              <button (click)='onClick(player, "n")' class="btn" [ngClass]="{'btn-danger': player.games[game].status === 'n'}">Not Playing</button>
+              <button (click)='onClick(player, "u")' class="btn" [ngClass]="{'btn-warning': player.games[game].status === 'u'}">Undecided</button>
+            </div>
+          </td>
+        </tr>
+    </table>
+  </div>
+</div>
