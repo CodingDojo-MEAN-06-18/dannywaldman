@@ -1,0 +1,7 @@
+img {
+  width: 150px;
+}
+
+.img-lg {
+  width: fit-content;
+}

@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col">
+    <div class="content-wrapper p-3">
+      <div class="text-success">
+        <h1>1st Place</h1>
+        <p>{{ winner.name }} <span class="text-monospace">(Score: {{ winner.score }})</span></p>
+      </div>
+      <div class="text-danger">
+        <h1 >2nd Place</h1>
+        <p>{{ looser.name }} <span class="text-monospace">(Score: {{ looser.score }})</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="content-wrapperp-3 shadow-lg text-center">
+        <img src="{{ winner.picture }}" class="m-2 img-lg">
+    </div>
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col">
+    <button (click)="reset()" class="btn btn-block btn-dark text-center shadow-lg">Reset</button>
+  </div>
+</div>

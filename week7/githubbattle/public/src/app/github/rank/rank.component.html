@@ -1,0 +1,13 @@
+<div class="row mt-2 align-items-center" *ngFor="let user of users; let i = index">
+  <div class="col-2">
+    <h1>{{ i + 1 }}</h1>
+  </div>
+  <div class="col">
+    <div class="content-wrapper">
+      <app-gituser [user]="user"></app-gituser>
+    </div>
+  </div>
+  <div class="col">
+      <h1>Score {{ user.score }}</h1>
+    </div>
+</div>
