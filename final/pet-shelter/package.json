@@ -1,0 +1,13 @@
+{
+  "name": "pet-shelter",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.9",
+    "mongoose-seed": "^0.5.1",
+    "mongoose-unique-validator": "^2.0.1"
+  }
+}

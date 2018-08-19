@@ -1,0 +1,36 @@
+<a [routerLink]="['..']" class="float-right">Home</a>
+<div class="row">
+  <div class="col">
+    <h3>Details about {{ pet?.name }}</h3>
+    <table class="table table-responsive table-borderless">
+      <tr>
+        <th class="float-right">Pet Type</th>
+        <td>{{ pet?.type.name }}</td>
+      </tr>
+      <tr>
+        <th class="float-right">Description</th>
+        <td>{{ pet?.description }}</td>
+      </tr>
+      <tr>
+        <th class="float-right">Skills</th>
+        <td>
+          <p *ngFor="let skill of pet?.skills">
+            {{ skill }}
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <th class="float-right">Likes</th>
+        <td>{{ pet?.likes }}</td>
+      </tr>
+      <tr>
+        <td class="float-right">
+          <button class="btn btn-default" (click)="like()" [disabled]="isLiked">Like this pet</button>
+        </td>
+        <td>
+          <button class="btn btn-secondary" (click)="adopt()">Adopt this pet</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

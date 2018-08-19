@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col">
+    <h3>Know of a pet needing a home?</h3>
+    <div *ngIf='errors.length'>
+      <ul class="alert alert-danger">
+        <li *ngFor='let error of errors'>{{ error }}</li>
+      </ul>
+    </div>
+    <form class="border border-dark p-3" (submit)='onSubmit($event)' #form='ngForm'>
+      <div class="form-group">
+        <label for="">Pet Name</label>
+        <input type="text" class="form-control" name='petname' minlength='3' required #name='ngModel' [(ngModel)]='pet.name'>
+        <span *ngIf="name.dirty && name.invalid" class="text-danger">Pet name is required and must be at least 3 characters long.</span>
+      </div>
+      <div class="form-group">
+        <label for="">Description</label>
+        <input type="text" class="form-control" name='petdesc' minlength='3' required #description='ngModel' [(ngModel)]='pet.description'>
+        <span *ngIf="description.dirty && description.invalid" class="text-danger">Pet description is required and must be at least 3 characters long.</span>
+      </div>
+      <div class="form-group">
+        <label for="">Pet Type</label>
+        <select name="petType" class="form-control" required #type='ngModel' [(ngModel)]='pet.type._id' #type='ngModel'>
+          <option *ngFor="let type of petTypes" value="{{ type._id }}">{{ type.name }}</option>
+          <span *ngIf="type.dirty && type.invalid" class="text-danger">Pet type is required.</span>
+        </select>
+      </div>
+      Skills:
+      <div class="form-group ml-5">
+        <label for="">Skill 1</label>
+        <input type="text" class="form-control" name='skill1' minlength='3' #skill1='ngModel' [(ngModel)]='pet.skills[0]'>
+        <span *ngIf="skill1.dirty && skill1.invalid" class="text-danger">Skill must be at least 3 characters long.</span>
+      </div>
+      <div class="form-group ml-5">
+        <label for="">Skill 2</label>
+        <input type="text" class="form-control" name='skill2' minlength='3' #skill2='ngModel' [(ngModel)]='pet.skills[1]'>
+        <span *ngIf="skill2.dirty && skill2.invalid" class="text-danger">Skill must be at least 3 characters long.</span>
+      </div>
+      <div class="form-group ml-5">
+        <label for="">Skill 3</label>
+        <input type="text" class="form-control" name='skill3' minlength='3' #skill3='ngModel' [(ngModel)]='pet.skills[2]'>
+        <span *ngIf="skill3.dirty && skill3.invalid" class="text-danger">Skill must be at least 3 characters long.</span>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary mr-5" [disabled]='!form.valid'>Edit Pet</button>
+        <a class="btn btn-primary" [routerLink]="['..']">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
